@@ -1,0 +1,33 @@
+.card{
+    margin-right: 20px; 
+     margin-top: 50px;
+     margin-left: 11px;
+ }
+
+ Card.Img{
+    margin: 150px 450px;
+    
+ }
+ .cards   {
+
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+    }
+    /* .favo{
+position: absolute;
+      left: 80%;
+      top: 5%;
+      height: 8px;
+      width: 6px;      
+    } */
+    .dele{
+      width: 5px;
+    }
+ 
+    .chat{
+      position: absolute;
+     left:"30px" ;
+    }
+
+   

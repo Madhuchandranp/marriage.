@@ -1,0 +1,43 @@
+{
+  "name": "body-parser",
+  "description": "Node.js body parsing middleware",
+  "version": "1.15.0",
+  "contributors": [
+    "Douglas Christopher Wilson <doug@somethingdoug.com>",
+    "Jonathan Ong <me@jongleberry.com> (http://jongleberry.com)"
+  ],
+  "license": "MIT",
+  "repository": "expressjs/body-parser",
+  "dependencies": {
+    "bytes": "2.2.0",
+    "content-type": "~1.0.1",
+    "debug": "~2.2.0",
+    "depd": "~1.1.0",
+    "http-errors": "~1.4.0",
+    "iconv-lite": "0.4.13",
+    "on-finished": "~2.3.0",
+    "qs": "6.1.0",
+    "raw-body": "~2.1.5",
+    "type-is": "~1.6.11"
+  },
+  "devDependencies": {
+    "istanbul": "0.4.2",
+    "methods": "1.1.2",
+    "mocha": "2.4.5",
+    "supertest": "1.1.0"
+  },
+  "files": [
+    "lib/",
+    "LICENSE",
+    "HISTORY.md",
+    "index.js"
+  ],
+  "engines": {
+    "node": ">= 0.8"
+  },
+  "scripts": {
+    "test": "mocha --require test/support/env --reporter spec --check-leaks --bail test/",
+    "test-cov": "istanbul cover node_modules/mocha/bin/_mocha -- --require test/support/env --reporter dot --check-leaks test/",
+    "test-travis": "istanbul cover node_modules/mocha/bin/_mocha --report lcovonly -- --require test/support/env --reporter spec --check-leaks test/"
+  }
+}

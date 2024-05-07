@@ -1,0 +1,20 @@
+.addpro{
+    border: 1px solid black;
+    height: 200px;
+    width: 20%;
+    margin-top: 10px;
+    margin-left: 15%;
+    padding-top: 80px;
+    border-radius: 10px;
+    display:  flex;
+    flex-wrap: wrap;
+    
+}
+
+.link1{
+    padding-left: 60px;
+    font-weight: bolder;
+    text-decoration: none;
+    color: black;
+    font-size: 25px;
+}
