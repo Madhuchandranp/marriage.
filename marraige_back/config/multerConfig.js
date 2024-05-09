@@ -12,7 +12,7 @@ const dir = 'public/uploads';
 
 
 const storage = multer.diskStorage({
-  destination: async (req, file, callback) => {
+  destination: async (req, file, callback,userEmail) => {
     try {
       await fs.mkdir(dir, { recursive: true });
       callback(null, dir);

@@ -48,27 +48,17 @@ try {
     }
   };
 
-  const getAllImage=async(req,res)=>{
-    try {
-        const image=await Image.find();
-        res.json(image)
-    } catch (error) {
-        res.status(500).json({ error: err.message });
-
-    }
-  }
-
-  // const addImage = async (req, res) => {
+  // const getAllImage=async(req,res)=>{
   //   try {
-  //     const {image} = req.body;
-  
-  //     const photos = new Image({ image });
-  //     await photos.save();
-  //     res.status(200).json(photos);
+  //       const image=await Image.find();
+  //       res.json(image)
   //   } catch (error) {
-  //     console.log(error);
+  //       res.status(500).json({ error: err.message });
+
   //   }
-  // };
+  // }
+
+  //
   const deleteImage=async(req,res)=>{
     try {
         const {id}=req.params;
@@ -124,7 +114,7 @@ try {
     deleteImage,
     deleteRelative,
     deleteUser,
-    getAllImage,
+    // getAllImage,
     findAllUsers,
     findAllRelative,
   }

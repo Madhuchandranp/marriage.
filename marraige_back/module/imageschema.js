@@ -4,10 +4,10 @@ const imageschema=new mongoose.Schema({
         type:String,
         required:true
     },
-    userEmail:{
-        type:String,
-        required:false
-    }
+    // userEmail:{
+    //     type:String,
+    //     required:false
+    // }
     
    
 })

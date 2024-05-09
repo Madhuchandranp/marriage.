@@ -23,10 +23,9 @@ app.use(express.urlencoded({ extended: false }));
 
 connectDB()
 
-app.use("/api/uploadimage", fileuploadRoute);
+// app.use("/api/uploadimage", fileuploadRoute);
 app.use('/api/marraige',userRouter);
 
-// app.use('/api/marraige',commentRouter);
 
 
 app.listen(PORT,()=>{
