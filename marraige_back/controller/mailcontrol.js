@@ -19,7 +19,7 @@ const postEmail= async (req, res) => {
         text: `
           Hello!
           You have been invited to access our website. Click the link below to access
-          "http://localhost:3000/Fhome"  .
+          "http://localhost:3000/Rhome"  .
 
           Best regards,
           Your Name
