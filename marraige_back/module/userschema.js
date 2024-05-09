@@ -13,11 +13,19 @@ const userSchema = new mongoose.Schema({
         type: String,
         required: true
     },
-    image: [],
-//      imageId: {
-//     type: mongoose.Schema.Types.ObjectId,
-//     ref: 'Image'
-//   },
+    // images: [
+    //     {
+    //         imageId: {
+    //             type: String,
+    //             required:true
+    //         },
+    //         imageData: {
+    //             type: String,
+    //             required: true
+    //         }
+    //     }
+    // ]
+        image:[],
 
 })
 

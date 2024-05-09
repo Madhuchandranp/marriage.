@@ -11,7 +11,11 @@ const commentSchema = new mongoose.Schema({
         text: String
       }
     ],
-    date: { type: Date, default: Date.now }
+    date: { type: Date, default: Date.now },
+    email: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: 'User'
+    },
 
   });
   

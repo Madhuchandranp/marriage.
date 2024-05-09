@@ -6,7 +6,7 @@
   try {
     const { imageId,text,user } = req.body;
     console.log(req.body);
-    const newComment= new Comment({ imageId,text });
+    const newComment= new Comment({ user,imageId,text });
     await newComment.save();
     res.status(201).json(newComment);
   } catch (error) {

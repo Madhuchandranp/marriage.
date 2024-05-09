@@ -81,27 +81,7 @@ const addImage = async (req, res) => {
     res.status(500).json({ success: false, message: 'Image upload failed' });
   }
 };
-//   try {
-//     const {userEmail,image} = req.body;
-//     console.log(req.body);
-//     console.log(userEmail);
 
-//     const photos = new Image({ userEmail,image });
-//     await photos.save();
-//     res.status(200).json(photos);
-//   } catch (error) {
-//     console.log(error);
-//   }
-// };
-//   const getAllImage=async(req,res)=>{
-//     try {
-//         const image=await Image.find();
-//         res.json(image)
-//     } catch (error) {
-//         res.status(500).json({ error: err.message });
-
-//     }
-//   };
 
 const getAllImage = async (req, res) => {
   const userId = req.body.userId
@@ -127,14 +107,41 @@ const getAllImage = async (req, res) => {
 };
 const deleteImage = async (req, res) => {
   try {
-    const { id } = req.params;
-    console.log("Received id:", id);
-    await Image.findByIdAndDelete(id)
-    res.json({ message: "image delete successfully" });
-  } catch (err) {
-    res.status(400).json({ error: err.message });
+    const { index } = req.params;
+
+    const userEmail = req.body.userEmail;
+
+    const user = await User.findOne({ email: userEmail });
+    const deleteData=user.image[parseInt(index)]
+    console.log("Received index:", typeof(index),deleteData);
+
+    if (!user) {
+      return res.status(404).json({ error: "User not found" });
+    }
+    if (index < 0 || index >= user.image.length) {
+      return res.status(400).json({ error: "Invalid image index" });
+    }
+    // Remove the image from the user's image array using splice
+
+    user.image.splice(index, 1);
+    await user.save();
+
+    res.json({ message: "Image deleted successfully" });
+  } catch (error) {
+    console.error("Error deleting image:", error);
+    res.status(500).json({ error: "Internal server error" });
   }
 };
+//     const image = await Image.findOne({ img_id: id, userEmail: email });
+//     if (!image) {
+//       return res.status(404).json({ error: "Image not found or does not belong to the user" });
+//     }
+//     await Image.findByIdAndDelete(id)
+//     res.json({ message: "image delete successfully" });
+//   } catch (err) {
+//     res.status(400).json({ error: err.message });
+//   }
+// };
 module.exports = {
   createUser,
   loginUser,
